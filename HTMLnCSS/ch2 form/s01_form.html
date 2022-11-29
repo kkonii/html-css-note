@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+서버에 데이터를 전송할 때는 form 태그 안에 하위 태그 input,selecct,
+textarea 등을 명시하고 태그에 데이터를 입력해서 전송함
+form 태그 밖에 명시한 태그에 입력된 데이터는 전송되지 않음 -->
+<form action="a.jsp" method="get">
+	<!-- 한 줄 입력 태그 -->
+	이름 <input type="text" name="name" size="10" maxlength="15"
+				placeholder="이름 입력">
+	비밀번호<input type="password" name="password" size="10" maxlength="8"
+				placeholder="비밀번호 입력">
+	<br>파일업로드<input type="file" name="image">					<!-- 업로드할 파일 선택-->
+	<br>좋아하는 계절<br>
+	<!-- checkbox는 다중 선택 가능 -->
+	<input type="checkbox" name="season" value="봄">봄
+	<input type="checkbox" name="season" value="여름">여름
+	<input type="checkbox" name="season" value="가을" checked="checked">가을
+	<input type="checkbox" name="season" value="겨울">겨울
+	<br>
+	국적<br>
+	<input type="radio" name="country" value="대한민국">대한민국
+	<input type="radio" name="country" value="미국">미국
+	<input type="radio" name="country" value="영국">영국
+	<input type="radio" name="country" value="프랑스">프랑스
+	<br>학교<br>
+	<select name="school">
+		<option>1</option>
+		<option>2</option>
+		<option selected="selected">3</option>						<!-- selected : 기본값을 선택으로 할 것인지의 여부-->
+	</select>
+	<br>직업<br>
+	<select name="job">												<!-- 선택지들을 분류할 기준-->
+		<optgroup label="전문직">									<!-- 선택지들을 분류할 카테고리명-->
+			<option>의사</option>
+			<option>프로그래머</option>
+			<option>요리사</option>
+		</optgroup>
+		<optgroup label="운동선수">
+			<option>농구선수</option>
+			<option>축구선수</option>
+			<option>배구선수</option>
+		</optgroup>
+	</select>
+	<br>내용<br>
+	<textarea rows="5" cols="50" name="content"></textarea>
+	<Br>
+	<input type="submit" value="전송">
+	<input type="reset" value="초기화">
+</form>
+</body>
+</html>
