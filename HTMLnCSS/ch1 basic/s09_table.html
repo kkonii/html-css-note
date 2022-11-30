@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TABLE</title>
+</head>
+<body>
+<h3>기본 태그</h3>
+<table border="1">
+	<!-- 제목은 중앙정렬 -->
+	<caption>제목</caption>
+	<tr>
+		<td>셀 1</td>	
+		<td>셀 2</td>	
+	</tr>
+	<tr>
+		<td>셀 1</td>	
+		<td>셀 2</td>	
+	</tr>
+	<tr>
+		<td>셀 1</td>	
+		<td>셀 2</td>	
+	</tr>
+</table>
+
+<h3><mark>figure 태그를 이용한 테이블에 제목 넣기</mark></h3>
+<figure>
+	<!-- 좌측정렬 -->
+	<figcaption>제목</figcaption>	
+	<table border="1">
+		<tr>
+			<td>셀3</td>
+			<td>셀2</td>
+			<td>셀3</td>
+		</tr>
+		<tr>
+			<td>셀3</td>
+			<td>셀2</td>
+			<td>셀3</td>
+		</tr>
+	</table>
+</figure>
+
+<h3><mark>표구조 정의하기</mark></h3>
+<!-- 
+<thead> : 표의 머리말 부분을 표시하는 태그
+<tbody> : 표의 내용을 표시하는 태그
+<tfoot> : 표의 꼬리말 부분을 표시하는 태그
+ -->
+ 
+<table border="1">
+ 	<caption>가격표</caption>
+ 	<thead>
+ 		<tr>
+ 			<!-- th : 중앙 정렬, 글자를 굵게 표시 -->
+ 			<th>메뉴명</th>
+ 			<th>가격</th>
+ 		</tr>
+ 	</thead>
+ 	<tbody>
+ 		<tr>
+ 			<td>바지락 칼국수</td>
+ 			<td>8,000원</td>
+ 		</tr>
+ 		<tr>
+ 			<td>뽈락구</td>
+ 			<td>13,000원</td>
+ 		</tr>
+ 		<tr>
+ 			<td>총합</td>
+ 			<td>21,000원</td>
+ 		</tr>
+ 		
+ 	</tbody>
+</table>
+</body>
+</html>
