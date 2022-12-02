@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>font의 여러가지 속성</title>
+<style type="text/css">
+    /* font-family 속성
+        속성의 값으로는 구체적인 글자의 이름을 지정하며 만약 여러 개의 글자체를
+        지정하고자 할 때에는 , 로 구분하여 글자체 열거
+
+        명조체,굴림,궁서 등 구첸적인 글자 외의 다음값을 사용하여 폰트의 종류를 값으로 지정
+
+        값          설명
+        serif       명조계열 글자체
+        sans-serif  고딕계열
+        CURSIVE     필기체
+        FANTASY     장식이 되어 있는 글자체
+        monospace   일정한 공간으로 되어있는 글자체
+
+        font-style 속성
+        값          설명
+        italic      이탤릭체
+        oblique     이탤릭체
+
+        font-variant 속성
+        값          설명
+        small-caps  작은 대문자로 변환
+
+        일괄지정 font
+        font:   font-style값
+                font-weight값
+                font-variant값
+                font-size/ line-height값(=줄간격)
+                font-family값
+
+        예)
+        .font   {font:italic bold small-caps 30pt/50pt serif}
+    */
+
+    span{
+        font-family:serif;  /*글꼴 지정*/
+        font-size : 20pt;   /*글자의 크기*/
+        font-style:oblique; /*기울어진 글자*/
+    }
+    p{font:italic bold small-caps 30pt/50pt serif}
+</style>
+</head>
+<body>
+    <span>겨울이 오는 소리</span>
+    <p>Happy Birthday</p>
+    <h5>welcome!</h5>
+</body> 
+</html>
