@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>테이블에 스타일 주기</title>
+<style type="text/css">
+    table{
+        width:500px;
+        border:2px dotted orange;
+        /*중앙 정렬 : 테이블의 margin을 상하 0px로, 좌우는 auto*/
+        margin:auto;
+        border-collapse:collapse;   /*테이블border 한 줄로 설정*/
+        text-align: center;
+    }
+    th{border:1px solid orange;
+        background-color: #ffcc66;
+    color:white; padding:5px;
+}
+    td{border:1px solid orange; height:100px;
+    vertical-align: center;}
+
+    tr.bg td{
+        color:white;
+        background-color:#EAF2D3;
+        vertical-align:bottom;
+    }
+    caption{
+        color:#FF6600;
+        background-color:beige;
+        font-size:11pt;
+        font-weight:bold;
+        vertical-align: bottom;
+        margin-top:5px;     /*흠*/
+
+    }
+
+</style> 
+</head>
+<body>
+    <table border="1px">
+        <caption>table 스타일 처리</caption>
+        <tr>
+            <th>서울</th>
+            <th>부산</th>
+            <th>광주</th>
+        </tr>
+        <tr>
+            <td>산</td>
+            <td>하늘</td>
+            <td>바다</td>
+        </tr>
+        <tr class="bg">
+            <td>구름</td>
+            <td>비</td>
+            <td>눈</td>
+        </tr>
+    </table>
+<br><br><br>
+    <table border="1px" style="border:blue solid 2px;">
+        <caption>helllo</caption>
+        <tr>
+            <th>서울</th>
+            <td>눈</td>
+            <td>바다</td>
+        </tr>
+        <tr>
+            <th>부산</th>
+            <td>산</td>
+            <td>하늘</td>
+            
+        </tr>
+        <tr class="bg">
+            <th>광주</th>
+            <td>구름</td>
+            <td>비</td>
+            
+        </tr>
+    </table>
+</body>
+</html>
