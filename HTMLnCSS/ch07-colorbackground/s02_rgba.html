@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>rgba - 색상 투명도</title>
+<style type="text/css">
+    div{
+        width:300px; height:30px;
+        /* background-color: gray; */
+    }
+    /* 알파(투명도) : 0.0(완전 투명) ~ 1.0(완전 불투명) */
+    div.a1{background-color: rgba(225, 70, 10, 1.0) ;}
+    div.a2{background-color: rgba(225, 70, 10, 0.8);}
+    div.a3{background-color: rgba(225, 70, 10, 0.5);}
+    div.a4{background-color: rgba(225, 70, 10, 0.2);}
+    div.a5{background-color:rgba(225, 70, 10, 0.1);}
+
+    /* 투명도를 별도의 속성 opacity로 표시 */
+    div.b1{background-color: rgba(225, 70, 10); opacity:1,0}
+    div.b2{background-color: rgba(225, 70, 10);opacity:0.8}
+    div.b3{background-color: rgba(225, 70, 10);opacity:0.5}
+    div.b4{background-color: rgba(225, 70, 10);opacity:0.2}
+    div.b5{background-color:rgba(225, 70, 10);opacity:0.1}
+</style> 
+</head>
+<body>
+    <h2>rgba 적용</h2>
+    <div class="a1"></div>
+    <div class="a2"></div>
+    <div class="a3"></div>
+    <div class="a4"></div>
+    <div class="a5"></div>
+    <br><br>
+    <h1>opacity 적용</h1>
+    <div class="b1"></div>
+    <div class="b2"></div>
+    <div class="b3"></div>
+    <div class="b4"></div>
+    <div class="b5"></div>
+</body>
+</html>
