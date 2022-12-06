@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 
+    VIEW PORT :스마트폰 화면에서 실제 내용이 표시되는 영역
+    속성                설명            사용가능한 값            기본값
+    width         | viewport의 넓이 |  device-width 또는 크기  |  브라우저 기본값
+    height        | viewport의 높이 |  divice-height또는 높이  |  브라우저 기본값
+        ㄴ보통 지정하지 않는다(자동으로 늘어나기 때문에)
+    user-scalable | 확대/축소 기능  | yes(가능) 또는 no(불가능) |  yes
+    initial-scale | 초기 확대/축소  |    값 1~10               |  1
+    minimum-scale | 최소 확대/축소  |    값 0~10               |   0.25
+    maximum-scale | 최대 확대/축소  |     값 0-10              |   1.6 
+ -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEDIA QUERY</title>
+<style type="text/css">
+    body{
+        font-size:30px; }
+
+     /* 767px 이하 */
+      @media screen and (max-width:767px){
+        h1{color:red;}
+        ul{list-style:none;}
+        ul li{font-size:40%}                /*767px 이하일 경우 이 블록안의 스타일 적용 */
+      }
+    /* 768 - 991 px 사이 */
+      @media screen and (min-width:768px) and (max-width:991px){
+        h1{color:blue;}
+        ul{list-style:none;}
+        ul li{
+            background-color: pink;
+            font-size:60%;
+            display:inline;
+        }
+      }
+    /* 992px 이상 */
+      @media screen and (min-width:992px){
+        h1{
+            color:green;
+        }
+        ul{list-style:none;}
+        ul li{
+            background-color: darkmagenta;
+            font-size:80%; color:white;
+            display:inline;
+            border:3px dashed yellowgreen;
+        }
+      }
+   
+</style> 
+</head>
+<body>
+    <h1>미디어 쿼리</h1>
+    <ul>
+        <li>서울</li>
+        <li>부산</li>
+        <li>대구</li>
+        <li>경주</li>
+        <li>제주</li>
+    </ul>
+</body>
+</html>
