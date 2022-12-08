@@ -1,0 +1,112 @@
+    /* 폰트 지정 */
+    @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+    @import url(https://fonts.googleapis.com/css?family=Oleo+Script);
+    
+    /* 기본 설정 */
+    *{
+        margin:0px; padding:0px;
+    }
+    body{font-family: "Jeju Gothic", serif;}
+
+    #container{
+        width:995px;
+        margin:auto;
+        border:1px solid #ccc;
+    }
+    /* header 스타일 지정 */
+    header{
+        width:100%;
+        height: 500px;
+        background:url(../files/header.jpg) center no-repeat;
+        margin:0;
+    }
+    /* 메뉴 */
+    nav{
+        background:black;
+        height:50px;
+    }
+    nav ul#main_nav{
+        list-style: none;
+        margin:0px;
+        padding:10px;
+        text-align: center;
+    }
+    nav ul#main_nav li{
+    display:inline-block;
+    /* color:#fff; */
+    font-family: "맑은 고딕", 돋움;
+    font-size:0.9em;
+    margin:5px 15px;
+	}
+
+	
+	nav a{
+	    text-decoration:none;
+	}
+	nav a:link, nav a:visited{
+	    color:#fff;
+	}
+	
+	/*내용*/
+	section{
+	    height:280px;
+	    padding:30px;
+	}
+	
+	section:nth-child(odd){
+	    background:#eee;
+	}
+
+    .page_title h1{
+        font-size:1.8em;
+    }
+    .content{
+        padding:30px;
+    }
+    
+    .content ol, .text ol{
+        margin-top:5px
+    }
+    .content ol li{
+        font-size: 12px;
+        line-height: 2;
+    }
+    #intro .photo, #map .photo{
+        float:left;
+        margin-right:5%;
+    }
+    #choice .photo{
+        float:right;
+        margin-right: 5%;
+    }
+
+    #choice .photo img{
+        border:1px solid white;
+        border-radius: 50%;
+    }
+    .text{
+        float:left;
+        width:46%;
+    }
+    .text p, .text ol li {
+        font-size: 1.3em;
+        line-height:2;
+    }
+
+    /* footer 스타일 지정 */
+    footer{
+        width:100%;
+        height:100px;
+        background-color: #000;
+    }
+
+    footer p{
+        color:white;
+        font-family: 'Oleo Script', cursive;
+        font-size: 1.5em;
+        line-height: 100px;     /*줄간격*/
+        text-align: center;
+    }
+    /* .방지용{
+        width: 10px; height:10px;
+    } */
