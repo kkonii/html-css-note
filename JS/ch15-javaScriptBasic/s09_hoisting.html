@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수 호이스팅</title>
+</head>
+<body>
+    <script type="text/javascript">
+      document.write(score);            //정의가 안 된 변수 출력 -> undefined 출력
+
+      var score;                        //출력 이후에 선언하더라도 변수로 인식함
+
+      /* 정리 :  document.write(score)가 실행되는 시점에는 아직 score 변수의 선언이
+                실행되지 않았으므로 참조 에러가 발생할 것처럼 보이지만 참조 에러가 
+                발생하지 않고 undefined가 출력된다.
+                그 이유는 변수 선언이 소스코드가 한 줄씩 순차적으로 실행되는 시점 즉,
+                runtime이 아니라 그 이전 단계에서 먼저 실행되기 때문이다.
+      */
+    </script>
+</body>
+</html>
