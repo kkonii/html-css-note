@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>주석 및 출력</title>
+</head>
+<body></body>
+    <script type="text/javascript">
+       // 주석
+       // 한 줄 주석
+       /* 여러줄 주석
+          여러줄 주석  */
+       
+        // document.writeln("주석 처리");
+        document.write('여러 줄');
+        document.write("주석 처리");
+
+        //문자 표시
+        document.write('Hello World@<br>');
+        document.write("Hello World! :)<Br>")
+
+        //일반 데이터로 "를 사용할 경우
+        document.write('오늘은 "나의 생일"입니다'); // ' '로 감쌀 경우 : 일반문자로 인식
+        document.write("오늘은 "나의 생일"입니다. ");// " "로 감쌀 경우: 특수문자로 인식. 에러 -> \"로 씀
+
+        //일반데이터로 '를 사용할 경우
+        document.write('여기는'서울'입니다 ');  //' '로 감쌀 경우: \'로 명시
+        document.write("여기는 '서울'입니다.");  //" "로 감쌀 경우: 일반문자로 인식
+    </script>
+</body>
+</html>
