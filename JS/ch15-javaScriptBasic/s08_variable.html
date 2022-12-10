@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수 사용시 주의사항</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var food = '김치찌개';          //변수 선언 및 초기화
+        document.write(food +'<br>');
+
+        food = '라면';                  //데이터  변경
+        document.write(food);
+        document.write('<br>---------<br>');
+
+        //변수 명을 같게 선언해도 오류가 발생하지 않음
+        //기존의 값이 사라지고 대입한 값을 사용
+        var food = '냉면';              //명칭 충돌의 에러. 같은 이름으로 변수선언불가
+        document.write(food);
+    </script>
+</body>
+</html>
