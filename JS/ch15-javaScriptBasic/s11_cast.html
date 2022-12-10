@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>형변환</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var input = prompt('숫자를 입력하세요','숫자');
+        /*숫자나 문자를 입력하는 문자로 입력시킴 - BufferedReader와 유사하다*/
+
+        document.write(typeof(input) + ':' + input);
+        document.write('<br>');
+
+        /*prompt를 통해서 입력된 데이터의 자료형이 string이기 때문에
+            input에 담겨잇는 데이어를 +하면 연산이 일어나는 것이 아니라 새로운 문자열을 생성*/
+
+        document.write(input + 10);
+        document.write('<br>');
+        document.write(input * 10);         //자동으로 형변환
+                                            //string -> number 가 되어 연산 수행
+
+        //형변환
+        //문자(문자열)를 숫자로 변환
+        var numberInput = Number(input); //명시적 형변환(문자 -> 숫자)
+        document.write('<br>형변환 이후<br>');
+        document.write(typeof(numberInput) + ':' + numberInput);
+        document.write('<br>');
+        document.write(numberInput + 10);
+    </script>
+</body>
+</html>
