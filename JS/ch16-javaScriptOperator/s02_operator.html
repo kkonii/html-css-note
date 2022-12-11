@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>증감연산자</title>
+</head>
+<body>
+    <script type="text/javascript">
+      var number =10;
+
+      document.write('<br>++number : ');
+      document.write(++number);
+
+      document.write('<br>number++ : ');
+      document.write(number++);                 //먼저 출력되고 후에 메모리상에 ++하기 때문에 11로 출력
+      document.write('<br>');
+      document.write(number);                   //++되어있던 메모리상의 number값이 출력됨
+
+      document.write('<br>--number : ');
+      document.write(--number);
+
+      document.write('<br>number-- : ');
+      document.write(number--);
+
+      document.write('<br>');
+      document.write(number); 
+    </script>
+</body>
+</html>
