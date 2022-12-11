@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+</head>
+<body>
+    <script type="text/javascript">
+    /* 실습 -  할인행사로 한 그릇에 국수 20%할인.
+              국수값은 3500원이고 5그릇을 주문하면 얼마를 지불해야 하는지
+              지불금액을 출력하시오.
+              [입력 예시] prompt - 국수 값, 국수 수량
+              [출력 예시] 지불금액 : 1400원
+                */
+
+        var price  = prompt('국수 값','');
+        var quantity = prompt('국수 수량','');
+
+        var total = price * quantity *0.8;
+        document.write('지불 금액 : '+total);
+    </script>
+</body>
+</html>
