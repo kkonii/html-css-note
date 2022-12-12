@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>switch문</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var score = prompt('당신의 점수는?',' ');
+        var grade;
+
+
+        if(score < 0 || score > 100){
+            document.write('점수를 잘못 입력했습니다. '
+                          + '0-100사이로 입력해주세요.');
+        }else{
+            //Math.floor(숫자) : 소수점 자리 이하 절삭
+            switch(Math.floor(score/10)){
+                case 10: case 9: grade='A';break;
+                case 8: grade='B'; break;
+                case 7: grade='C'; break;
+                case 6: grade='D'; break;
+                default : grade='F';
+            }
+            document.write('당신의 등급은 '+ grade);
+        }
+        
+    </script>
+</body>
+</html>
