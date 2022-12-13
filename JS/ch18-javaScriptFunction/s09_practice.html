@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가변인자 함수</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        /*실습 - 두 수를 입력해서 덧셈, 곱셈, 뺄셈, 나눗셈을 해서 결과값을 출력
+          덧셈(add), 곱셈(multi), 뺄셈(sub), 나눗셈(div) */
+          
+        var a = prompt('첫 번째 숫자', '');
+        var b = prompt('두 번째 숫자',' ');
+        var result;
+
+        /*
+        function add(){
+            result = Number(a) + Number(b);
+            document.write('덧셈 : ' + result);
+            document.write('<br>');
+        }
+        function multi(){
+            result = Number(a) * Number(b);
+            document.write('덧셈 : ' + result);
+            document.write('<br>');
+        }
+        function sub(){
+            result = Number(a) - Number(b);
+            document.write('뺄셈 : ' + result);
+            document.write('<br>');
+        }
+        function div(){
+            result = Number(a) / Number(b);
+            document.write('나눗셈 : ' + result);
+            document.write('<br>');
+        } 
+
+        add();
+        multi();
+        sub();
+        div();
+        */
+
+        //덧셈빼고는 자동 형변환 됨!
+        function add(a ,b){
+            return Number(a) + Number(b);
+        }
+        function sub(a ,b){
+            return Number(a) - Number(b);
+        }
+        function multi(a ,b){
+            return Number(a) * Number(b);
+        }
+        function div(a ,b){
+            return Number(a) / Number(b);
+        }
+
+        result = add(a,b);
+        document.write('덧셈 : ' + result);
+        result = sub(a,b);
+        document.write('뺄셈 : ' + result);
+        result = multi(a,b);
+        document.write('곱셈 : ' + result);
+        result =div(a,b);
+        document.write('나눗셈 : ' + result);
+
+    </script>
+</body>
+</html>
