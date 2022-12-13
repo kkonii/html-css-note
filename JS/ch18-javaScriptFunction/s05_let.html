@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>        
+<meta charset="utf-8">
+<title>LET</title>
+</head>
+   <script type="text/javascript">
+        /*
+            ES6(ECMAScript 2015의 줄임말)에서 변수를 정의
+            let은 블록 레벨 스코프
+        */
+       for(var i=1;i<=3;i++){       //전역변수로 인식
+        document.write(i + '<br>');
+       }
+       document.write('for문 종료후 : ' + i + '<BR>');
+
+        for(let j=1;j<=3;j++){
+            document.write(j + '<br>');
+        }
+        document.write('for문 종료후 : ' + j + '<BR>'); //Uncaught ReferenceError: j is not defined
+                                                        //j는 for문이 끝남과 동시에 소멸되어 호출 불가
+
+        //let는 블록레벨 스코프이므로 제어문 안에서 let로 변수를 선언하면
+        //제어문 안에서만 호출 가능하고, 제어문이 종료된 후에는 변수 소멸
+    </script>
+</body>
+</html>
