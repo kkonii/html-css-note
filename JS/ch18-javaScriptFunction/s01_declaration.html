@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>        
+<meta charset="utf-8">
+<title>함수(function)</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //선언적 함수
+        function check(){
+            document.write('호출하면 동작함 <br>');
+        }
+
+        //함수 호출
+        check();
+
+        function check2(msg){
+            document.write(msg + '을 좋아합니다.<br>');
+        }
+        //함수호출
+        check2('나');
+        check2(1000000);
+
+        function check3(num){
+            return num * num;               //java와 동일
+        }
+        //함수 호출
+        var number = check3(4);
+        document.write(number);
+    </script>
+</body>
+</html>
