@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>        
+<meta charset="utf-8">
+<title>지역변수와 전역변수</title>
+</head>
+   <script type="text/javascript">
+        /*지역변수(= 함수 레벨 스코프)
+          : 함수 안에서 var연산자를 사용해 선언한 변수
+            함수가 끝나면 소멸한다.
+            
+          전역변수
+          : 함수 바깥에서 만들어진 모든 변수
+            함수 안에서 var없이 만들어진 변수
+            함수가 끝나도 메모리에 남아있는 변수
+        */
+        function test1(){
+            var i =10;          //지역변수
+            document.write(i + '<br>');
+        }
+        test1();
+
+        //document.write(i + '<br>');     //Uncaught ReferenceError: i is not defined
+                                        // 출력 안됨(지역변수라서)
+        
+        var j;              //전역 변수
+        function test2(){
+            j =200;
+            document.write(j + '<br>');
+        }                                
+        test2();
+
+        function test3(){
+            document.write(j + '<Br>');
+        }
+        test3();
+
+        a = 10;             //전역 변수
+        function test4(){
+            a = 100;
+        }
+        test4();
+        document.write(a);
+        document.write('<br>');
+
+        //함수 내에서 var를 명시하지 않고 변수를 선언하면 전역 변수 -> 근데 헷갈려서 잘 안 씀
+        function test5(){
+            m = 200;     //전역변수
+        }
+        test5();
+        m = 33;
+        document.write(m);  //[출력]33
+        
+    </script>
+</body>
+</html>
