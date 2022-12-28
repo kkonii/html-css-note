@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>화살표 함수</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /* ES6에서 도입된 화살표 함수는 function키워드 대신
+           화살표(fat arrow =>)를 사용해 좀 더 간략한 방법으로 함수 선언 가능
+           화살표 함수는 항상 익명함수로 정의
+        */ 
+        var test = function(){
+            document.write('익명 함수 <br>');
+        }
+        //함수 호출
+        test();
+
+        var print = (x) => {
+            document.write(x);
+        }
+        //함수 호출
+        print('안녕하세요 저는 밀리입니다.');
+        
+        document.write('<Br>------<br>');
+
+     /* var a =10;
+        var 혼자만든함수 = (x) => {
+            a = x;
+            document.write(a);
+        }
+        혼자만든함수(30);
+    */
+        var print2 = (x) =>{
+            return x +10;
+        }
+        //함수 호출
+        var result = print2(20);
+        document.write('result = ' + result);
+        document.write('<br>--<br>');
+
+        //인자가 하나일 경우 ( )는 생략 가능
+        var print3 = x=>{
+            return x * 10;
+        }
+        //함수호출
+        var result2 = print3(2);
+        document.write('result2=  ' + result2); 
+        document.write('<br>--------<Br>');
+
+        //인자가 두 개 이상일 경우 반드시 ( )사용
+        var multi = (x,y) => {
+            return x * y;
+        }
+        var result3 = multi(7,9);
+        document.write('result3 = ' + result3);
+        document.write('<br>---------<Br>');
+
+        //{ }를 생략하고 아래와 같이 명시하면 (x,y) => {return x * y}와 같다/
+        var multi2 = (x,y) => x * y;
+        var result4 = multi2(2,5);
+        document.write('result4 = ' + result4);
+        document.write('<br>-----------<Br>');
+    </script>
+</body>
+</html>
