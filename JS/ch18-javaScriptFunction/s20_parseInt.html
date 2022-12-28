@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>parseInt / parseFloat</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var num = '1234';
+        document.write(Number(num) + '<br>');   //string -> number
+        document.write(parseInt(num) + '<Br>'); //string -> number (정수 전용)
+
+
+        var won = '1000원'; //숫자와 문자 혼합
+        document.write(Number(won) + '<br>');   //에러.
+        document.write(parseInt(won) + '<Br>'); /*[출력] 1000 
+                                                    : 문자를 제거하고 숫자만 출력됨
+                                                      앞의 숫자를 추출해서 형변환한 것*/
+
+        var won2 = '원1000';
+        document.write(parseInt(won2) + '<Br>');//[출력] NaN
+
+        //---------------------------------------------------
+        document.write('<실수값 테스트><br>');
+
+        var num2 ='24.56';
+        document.write(Number(num2) + '<br>');   //string -> number
+        document.write(parseFloat(num2) + '<Br>'); //string -> number (정수 전용)
+
+
+        var dollar = '1.5$';
+        document.write(Number(dollar) + '<br>');   //[출력] NaN
+        document.write(parseFloat(dollar) + '<Br>'); /*[출력]1.5
+                                                        : 앞의 숫자를 추출해서 형변환
+                                                          parseInt와 똑같은 동작방식 */
+
+        var dollar2 = '$1.5';
+        document.write(parseFloat(dollar2) + '<Br>'); //[출력] NaN
+
+
+
+            
+    </script>
+</body>
+</html>
