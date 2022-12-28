@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>isFinite</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var number1 = 10/0;
+        document.write('number1 = '+number1);       //[출력] number1 = infinity
+
+        document.write('<br>');
+
+        if(number1 == Infinity){                    //0으로 나누는 경우
+            document.write('number1은 무한대 <br>');
+        }else{                                      //0이 아닌 숫자로 나눈 경우
+            document.write('number1은 유한 <br>');
+        }
+
+        /* (주의)
+            -10 / 0 (음수를 0으로 나눌) 경우 -Infinity가 됨.
+            따라서 음수를 나눌 때는 위의 if문의 논리와 맞지 않아 사용불가.
+            -Infinity는 유한으로 결과값이 나온다.
+        */
+        document.write('<br>');
+
+        /*함수 또는 음수를 0으로 나눌 때 동일하게 체크를 하려면
+        isFinite 함수를 이용)
+        */
+        //isFinite() : 0으로 나누는지 아닌지 판별
+        if(isFinite(number1)){          //0이 아닌 수로 나눈 경우
+            document.write('유한<br>');
+        }else{
+            document.write('무한<br>');
+        }
+
+    </script>
+</body>
+</html>
