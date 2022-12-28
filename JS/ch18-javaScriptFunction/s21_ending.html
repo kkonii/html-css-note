@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>encoding</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*   인코딩                             디코딩
+          문자 -> 기호                        기호 -> 문자
+          숫자는 그대로 표시됨
+        */
+
+        /*
+         escape(url)         :   적절한 정도로 인코딩함
+         unescape(url)       :   적절한 정도로 디코딩함
+         encodeURI(url)         : 최소한의 문자만 인코딩함
+         decodeURI(url)         : 최소한의 문자만 디코딩함
+         encodeURIComponent     : 대부분의 문자를 인코딩함
+         decodeURIComponent     : 대부분의 문자를 디코딩함
+        */
+
+        var url = 'https://www.naver.com?test=한글입니다.';
+        var output = '';
+        output += '*escape()<br>';
+        output += escape(url) + '<br>';
+
+        //출력
+        document.write(output);
+        //https%3A//www.naver.com%3Ftest%3D%uD55C%uAE00%uC785%uB2C8%uB2E4.
+        //  :  콜론, 물음표, = , 한글 등 대부분 인코딩
+
+        output += '*encodeURI()<br>';
+        output += encodeURI(url) + '<br>';
+        document.write(output);
+        //https://www.naver.com?test=%ED%95%9C%EA%B8%80%EC%9E%85%EB%8B%88%EB%8B%A4.
+        //  : 한글만 인코딩 처리
+
+        var input= '';
+        input += encodeURIComponent(url)+'<br>';
+        document.write(input);
+        //https%3A%2F%2Fwww.naver.com%3Ftest%3D%ED%95%9C%EA%B8%80%EC%9E%85%EB%8B%88%EB%8B%A4.
+        //  : 한글 및 : // 와 ? (정말로 거의 다 인코딩)
+    </script>
+</body>
+</html>
