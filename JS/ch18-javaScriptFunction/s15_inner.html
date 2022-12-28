@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내부함수</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function f(){
+            //변수 선언 및 초기화
+            var n = 123;
+            
+            //내부함수
+            function g(){
+                document.write('n is ' + n + '<Br>');
+                document.write('g is called');
+            }
+            g();        //내부함수 호출
+        }
+
+        f();            //함수호출
+        /*파라미터가 있는 함수로도 만들 수 있다*/
+    </script>
+</body>
+</html>

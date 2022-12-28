@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클로저</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*클로저
+            :  지역변수를 남겨두는 현상
+        */
+       function outerFunction(name){
+            //변수 선언 및 초기화
+            var output='Hello ' + name + '...!';
+
+            //내부함수 반환
+            return function(){
+                alert(output);
+            }
+       }
+       var result = outerFunction('차은우');        //함수 호출
+       result();                                    //result에 저장된 내부함수 호출
+       /*var에 선언된 변수는 function블럭이 끝나면 소멸하지만,
+         result에서 호출시 사용돼야 하기 때문에 소멸하지 않고 남아있다. */
+    </script>
+</body>
+</html>
