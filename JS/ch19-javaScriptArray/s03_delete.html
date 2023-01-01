@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열의 요소 삭제</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //배열 생성ㅌ
+        var array  = ['one', 'two', 'three'];
+        
+        array.length = 2;       //마지막 데이터 제거
+
+        //배열 요소 목록
+        document.write(array);  //[출력] one, two
+
+        /*------------------------------------------*/ document.write('<Br>----------<br>');
+        array.length = 4;       //배열의 길이 증가
+        document.write(array);  //[출력] one,two,,,
+
+
+        /*------------------------------------------*/ document.write('<Br>----------<br>');
+        //배열의 생성
+        var array2 = ['포도', '사과', '딸기'];
+                    //  0       1       2
+        delete array2[1];       //제거한 위치에 빈 요소를 남김. 방은 그대로 남고 데이터만 삭제
+        document.write(array2); //[출력] 포도,,딸기 (가운데 요소 빔)
+
+        /*------------------------------------------*/ document.write('<Br>----------<br>');
+        //배열의 생성
+        var array3 = ['오렌지', '망고', '체리', '레몬'];
+
+        array3.splice(2,1); /* 인덱스 2에 해당하는 요소부터 하나의 요소를 제거
+                                삭제된 요소 다음에 오는 요소가 앞으로 이동함 */
+        document.write(array3); //[출력] 오렌지, 망고, 레몬
+
+        /*delete : 요소만 삭제되고 인덱스 변동은 생기지 않음
+          splice : 요소가 삭제된 후 인덱스 변동이 일어남.  */ 
+
+    </script>
+</body>
+</html>
