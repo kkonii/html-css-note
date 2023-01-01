@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //배열 생성ㅌ
+        var array  = ['포도', '사과', '바나나', '망고'];
+        //              0       1       2        3          length = 4;
+
+        //배열의 요소 출력
+        document.write(array[0] + '<br>');
+        document.write('<br>');
+
+        //반복문을 이용한 배열 요소의 출력
+        for(var i=0;i<array.length;i++){
+            document.write(array[i] + '<br>');
+        }
+        document.write('======<br>');
+
+        //for in 반복문을 이용한 배열 요소의 출력
+        for(var i in array){                        //i는 index값 , array는 배열명
+            document.write(array[i] + ', ');
+        }
+    </script>
+</body>
+</html>
