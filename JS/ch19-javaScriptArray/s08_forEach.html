@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>forEach</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //배열 생성
+        var array = [1,2,3,4,5,6,7,8,9,10];
+
+        var sum = 0;
+
+        //forEach는 배열에 접근에서 인덱스, 요소, 배열 정보 반환
+        array.forEach(function(element,index,array){    //forEach안에서 동작하는 콜백함수
+            //누적
+            sum += element;
+            document.write(index + ': ' + element + '-> ' + sum + '<br>');
+            document.write('--->' + array + '<Br>');
+        })
+
+
+    </script>
+</body>
+</html>
