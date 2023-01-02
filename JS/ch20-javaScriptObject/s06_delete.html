@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>객체의 속성 제거</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //빈 객체 생성
+        var student = {};
+
+        //객체에 속성 추가
+        student.이름 = 'kelly';
+        student.나이 = 40;
+        student.취미 = '운동';
+        student.특기 = '달리기';
+
+        //객체에 메서드 추가 -> toString메서드를 재정의한다.
+        student.toString = function(){
+            var msg = '';
+            for(var key in this){       //객체명이 변경되도 상관X. 객체명 명시<this 가 좋은 코드
+                if(key != 'toString'){
+                    msg += key + ': ' + this[key] + '<br>';
+                }
+            }
+            return msg;
+        }
+
+        //객체의 속성 출력
+        document.write(student);
+
+        //객체의 속성 제거
+        delete student.취미;
+        document.write(student);
+    </script>   
+</body>
+</html>;
