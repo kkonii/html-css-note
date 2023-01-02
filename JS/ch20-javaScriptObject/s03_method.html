@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>객체의 속성과 메서드 사용</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //객체 생성
+        // var name = '유재석';
+        var person = {
+            //속성 지정
+            name : '홍길동',
+            //메서드 지정
+            eat: function (){       //익명함수 지정 -> key의 이름이 함수명이 됨.
+                document.write('밥을 먹는다! 우마이<br>');
+            },
+            drink : function(drink){
+                document.write(this.name + '이 ' + drink + '을 마신다');
+            } 
+            /* this : 메서드 내에서 자기자신이 가지고 있는 속성(또는 메서드)을
+                        호출하고 싶을 때는 객체 내부에서 객체를 참조할 때 사용
+                        this.name이라고 명시하면 속성을 호출하지만 name으로
+                        명시할 경우 지역변수를 찾고 없을 경우 객체 밖에 선언된
+                        변수를 찾음 */
+        }
+
+        //객체 속성 호출
+        document.write(person.name + '<br>');
+
+        //객체의 메서드 호출
+        person.eat();
+        person.drink('술');
+    </script>   
+</body>
+</html>
