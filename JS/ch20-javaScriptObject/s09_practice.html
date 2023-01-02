@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>배열에 객체 저장</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+            실습-   객체의 속성으로 이름,수입,지출 정보를 저장하고 빈 배열에 저장, 
+                    메서드는 getBalance(잔액), getTax(세금)
+            [출력예시]
+        이름            수입         지출        세금(5%)           잔액(세금 공제)
+        000             3000        2500    
+        000             2800        2500       
+        000             3000        2900       
+        000             6700        3100        
+        */
+
+        var array = [];
+
+        array.push({이름:'뫄뫄뫄',수입:100000,지출:3000});
+        array.push({이름:'여여ㅕ',수입:10000,지출:3000});
+        array.push({이름:'모모',수입:80080,지출:3000});
+        array.push({이름:'괄괄',수입:50000,지출:3000});
+        array.push({이름:'공주',수입:26700,지출:3000});
+
+        for(var i in array){
+            array[i].getTax = function(){
+                return this.수입 * 0.05;
+            }
+
+            array[i].getBalance = function(){
+                return this.수입 - this.지출 - this.getTax();
+            }
+        }
+
+
+
+    </script>   
+</body>
+</html>;
