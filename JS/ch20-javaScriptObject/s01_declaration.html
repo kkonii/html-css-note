@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>객체 생성</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //객체 생섵
+        var product = {
+            //속성(key(프로퍼티) : value)
+            제품명 : '소나타',
+            제품번호 : 'A1001',
+            기능 : '우수한 연비',
+            원산지 : '대한민국',
+            가격 : 1000,
+            업데이트지원 : true
+        }
+
+        //객체 속성 호출
+        //방식(1) : 배열명.속성명
+        document.write(product.제품명 + '<br>');
+        document.write(product.가격 + '<br>');
+        //방식(2) : 배열명['속성명']
+        document.write(product['기능'] + '<Br>');
+        document.write(product['업데이트지원'] + '<br>');
+    </script>   
+</body>
+</html>
