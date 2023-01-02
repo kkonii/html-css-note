@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>빈 객체</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //객체 생성
+        var student = {};
+
+        //객체에 속성 추가
+        student.이름 = '홍길동';        //key를 새로 만들고 값을 넣어준다
+        student.취미 = '댄스';
+        student.특기 = '베이킹';
+        student.장래희망 = '프로그래머';
+
+        //in 키워드 : 객체 내의 속성 존재 여부를 check
+        document.write('특기' in student);
+        document.write('<Br>');
+        document.write(student.특기 + '<br>');
+        for(var key in student){
+            document.write(key + ": " + student[key] + '<br>');
+        }
+
+        //객체에 메서드 추가
+        student.play = function(){
+            document.write('피아노를 연주하다.');
+        }
+        student.play();
+
+        //for in 반복문을 이용한 객체의 속성 및 메서드 출력
+        for(var key in student){
+            document.write(key + ': ' + student[key] + '<br>');
+        }
+    </script>   
+</body>
+</html>
