@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>toString()의 사용</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //빈 객체 생성
+        var student = {};
+
+        document.write(student);
+        document.write('<br>');
+
+        /*객체를 생성하면 자동적으로 Object를 상속받게 되고 Object 안의 toString()를 사용할 수 있게 되는데
+            student를 호출하면 자동적으로 상속받은 toString()를 호출하게 됨 */
+
+        document.write(student.toString());
+        document.write('<br>');
+
+        //객체에 속성 추가
+        student.이름 = '장영만';
+        student.취미 = '커피 만들기';
+        student.나이 = 30;
+        
+        //for in 반복문을 이용한 객체 속성 출력
+        for ( var key in student){
+            document.write(key + ': ' + student[key] + '<br>');
+        }
+        document.write('<br>--------------------------------------------------------------<Br><br>');
+
+        //객체에 메서드 추가 -> toString메서드를 재정의한다.
+        student.toString = function(){
+            var msg = '';
+            for(var key in this){       //객체명이 변경되도 상관X. 객체명 명시<this 가 좋은 코드
+                if(key != 'toString'){
+                    msg += key + ': ' + this[key] + '<br>';
+                }
+            }
+            return msg;
+        }
+
+        document.write(student.toString());
+        document.write('<br>');
+        document.write(student);
+    </script>   
+</body>
+</html>;
