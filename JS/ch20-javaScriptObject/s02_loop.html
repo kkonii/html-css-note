@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>반복문을 이용해서 객체의 속성 읽기</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var product = {
+            name : 'eclipse',
+            price : '10,000원',
+            language : '한국어',
+            supportOS : 'win10',
+            subscription : true,
+
+        }
+
+        //for in 반복문을 이용한 객체의 속성 읽기
+        for(var key in product){
+            document.write(key + ': ' + product[key] +  '<br>');   
+            /*key 변수에 객체의 key가 문자열(String)형태로 저장되기 때문에 값을 호출할 경우,
+                product[key] 형식만 인정됨*/
+        }
+    </script>   
+</body>
+</html>
