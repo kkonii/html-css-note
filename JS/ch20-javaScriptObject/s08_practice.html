@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>실습</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /* [실습] - 5개의 숫자를 prompt로 입력 받아서 배열에 저장하고 최대값과 최소값을 구해서 출력하시오.
+            [출력예시]
+            배열에 저장된 숫자:33,44,55,66,77
+            최대값:100
+            최소값:50
+        */
+        var array = [];
+        
+        var num1 = prompt('첫 번째 숫자 입력','');
+        array.push(Number(num1));
+        var num2 = prompt('두 번째 숫자 입력','');
+        array.push(Number(num2));
+        var num3 = prompt('세 번째 숫자 입력','');
+        array.push(Number(num3));
+        var num4 = prompt('네 번째 숫자 입력','');
+        array.push(Number(num4));
+        var num5 = prompt('다섯 번째 숫자 입력','');
+        array.push(Number(num5));
+
+
+        var minimum = 최소값(array);
+        var maximum = 최대값(array);
+
+        document.write('배열에 저장된 숫자 : ' + array + '<br>');
+        document.write('최소값 : ' + minimum + '<Br>');
+        document.write('최대값 : ' + maximum)
+        
+        function 최소값(array){
+            var min = array[0];
+             for(var i=1;i<array.length;i++){
+                if(array[i] < min){
+                 min = array[i];
+                }    
+            }
+            return min;
+        }
+       
+        function 최대값(array){
+            var max = array[0];
+            for(var i=1;i<array.length;i++){
+                if(array[i] > max) {
+                    max = array[i]; 
+                }
+            }    
+            return max;
+        }
+
+        
+            
+
+            
+               
+           
+            
+       
+    </script>   
+</body>
+</html>
