@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>프로토 타입</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //생성자 함수 정의
+        function Student(name, korean, math, english){
+            //속성 지정
+            this.이름 = name;
+            this.국어 = korean;
+            this.수학 = math;
+            this.영어 = english;
+        }
+
+        /*프로토타입(= 객체들의 공통 영역)은 생성자 함수를 사용해 생성된  객체들이 공통으로 가지는 공간
+            : 생성자 함수 타입의 객체만 가능 {} 형태는 프로토타입을 만들 수 X
+              데이터들이 프로토타입에서 필요한 메서드들을 가져다 쓴다 -> 효율적인 메모리 사용*/
+        Student.prototype.getSum = function(){
+            return this.국어 + this.수학 + this.영어;
+        }    
+        Student.prototype.getAverage = function(){ 
+            return this.getSum() / 3;
+        }
+
+        //빈 배열 생성
+        var student = [];
+        student.push(new Student('이익준',100,99,90),new Student('장겨울',99,89,88),
+                    new Student('이완익',44,55,66),new Student('하야시',10,10,10));
+             
+        for(var i in student){
+            document.write(student[i].이름 + ', ' + student[i].getSum() + ', '
+                        + student[i].getAverage() + '<br>');
+        }
+    </script>   
+</body>
+</html>
