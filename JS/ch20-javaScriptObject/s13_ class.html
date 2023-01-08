@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>class 정의</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //클래스 정의
+        class Person{
+            //생성자
+            constructor(name){
+                this.name = name;
+            }
+            //메서드 지정
+            sayHi(){
+                document.write('Hi! :) my name is ' + this.name);
+            }
+        }
+
+        //객체 생성
+        const person = new Person('Lee');       //JS에서는 객체를 상수에 저장한다.
+
+        //객체의 속성 호출
+        document.write(person.name);
+        document.write('<br>');
+
+        //객체의 메서드 호출
+        person.sayHi();
+    </script>   
+</body>
+</html>
