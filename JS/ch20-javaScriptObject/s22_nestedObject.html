@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<TITLE>String의 속성 및 메서드 사용</TITLE>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        var msg = '세상의 끝에서 세상을 노래하다';
+
+        document.write(msg.length + '<br>');
+        document.write(msg.charAt(8) + '<br>');
+        
+        document.write(msg.indexOf('노래') + '<br>');
+        document.write(msg.indexOf('수') + '<br>');         //존재하지 않는 인덱스 -> -1출력
+
+        document.write(msg.indexOf('상') + '<br>');         //앞에서부터 검색
+        document.write(msg.lastIndexOf('상') + '<br>');     //뒤에서부터 검색
+
+        document.write(msg.substring(5) + '<br>');          //시작 인덱스 ~ 끝 인덱스까지의 문자 추출
+        document.write(msg.substring(1,5) + '<br>');        //시작 인덱스 ~ 지정한 인덱스 전까지의 문자 추출 (1-4까지만 추출)
+
+        document.write(msg.substr(5) + '<br>');             //시작 인덱스 ~ 끝 인덱스까지 문자 추출
+        document.write(msg.substr(1,5) + '<br>');           //시작 인덱스부터 5개 추출
+        document.write(msg.substr(5,2) + '<br>');           //시작 인덱스부터 두 개만 추출
+
+        document.write(msg.slice(5) + '<br>');
+
+        document.write(msg.slice(1,5) + '<br>');             //시작인덱스부터 끝 인덱스 전까지
+
+        //------------------------------------------------------------------------------------------------------------
+
+        var msg2 = 'Hello WORLD';
+        document.write(msg2.toUpperCase() + '<br>');        //대문자로 변환
+        document.write(msg2.toLowerCase() + '<br>');        //소문자롭 변환
+        
+        document.write(msg.concat('하하') + '<br>');        //두 개의 문자열 결합       [출력]세상의 끝에서 세상을 노래하다하하
+
+        //------------------------------------------------------------------------------------------------------------
+        var msg3 = '2022-11-25';
+        var array = msg3.split('-');
+        for(var i=0;i<array.length;i++){
+            document.write(array[i] + '<bR>');
+        }
+    </script>
+</body> 
+</html>
