@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<TITLE>Array</TITLE>
+</head>
+<body>
+    <script type="text/javascript">
+        //배열 생성
+        var array1 = new Array();                   //빈 배열 생성(생성자를 이용해 호출함)
+
+        document.write(array1 + '<br>');
+        document.write(array1.length + '<br>');     //0
+
+        //배열 생성
+        var array2 = new Array(10);                 //길이가 10인 배열
+        document.write(array2 + '<br>');
+        document.write(array2.length + '<br>');     //10
+
+        //배열 생성
+        var array3 = new Array(52,273,103,57,32);
+
+        document.write(array3 + '<br>');
+        document.write(array3.length + '<br>');
+        document.write('---------------------------------------------------<Br>');
+        
+        //반복문을 이용한 출력
+        for(var i=0;i<array3.length;i++){
+            document.write(array3[i] + '<br>');
+        }
+        document.write('--------------------------------------------------<br>');
+
+        //for in 반복문을 이용한 출력
+        for(var i in array3){
+            document.write(array3[i] + '<br>');
+        }
+
+    </script>
+</body> 
+</html>
