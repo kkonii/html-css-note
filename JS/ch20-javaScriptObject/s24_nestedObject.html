@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<TITLE></TITLE>
+</head>
+<body>
+    <span id="display"></span>
+    <script type="text/javascript">
+        //script태그의 동작을 지연시킴 : 윈도우가 로드되면 이벤트핸들러를 호출
+        window.onload=function(){
+            //일정 시간마다 매개변수로 전달된 함수를 반복해서 실행
+            window.setInterval(function(){
+                var time = new Date();
+                var hours = time.getHours();
+                var minutes = time.getMinutes();
+                var seconds = time.getSeconds();
+
+                //화면에 보일 시-분-초 형식 설정
+                var clock = '';
+                clock += ((hours < 10) ? '0' : '') + hours;
+                clock += ((minutes < 10) ? ':0' : ':') + minutes;   //분이 10분 아래면 앞에 0을 표기
+                clock += ((seconds < 10) ? ':0' : '') + seconds;    //초가 10초 아래면 앞에 0을 표기
+                
+                document.getElementById('display').innerHTML = clock;
+            },1000);
+        }
+    </script>
+</body> 
+</html>
