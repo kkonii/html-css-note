@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체의 innerHTML 속성 사용</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var output = '';
+		output += '<ul>';
+		output += '<li>javaScript</li>';
+		output += '<li>jQuery</li>';
+		output += '<li>bootStrap</li>';
+		output += '</ul>';
+		
+		//innerHTML 속성에 문자열을 할당
+		document.body.innerHTML = output;
+		
+		//텍스트로만 처리(html허용을 하지 않아서 ui가 만들어지지 않는다.)
+		// document.body.textContent = output;
+	};
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체의 속성 지정</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var img = document.createElement('img');//img태그 생성
+		//속성을 직접 호출
+		//img.src = '../files/landscape.jpg';
+		//img.width = 500;
+		//img.height = 350;
+		
+		//setAttribute 메서드를 활용해서 속성을 호출
+		img.setAttribute('src','../files/header.jpg');
+		img.setAttribute('width',500);
+		img.setAttribute('height',350);
+		
+		//생성한 노드를 body에 연결
+		document.body.appendChild(img);
+	};
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<TITLE>class를 이용한 문서 객체 탐색</TITLE>
+</head>
+<body>
+    <p id="foo">
+        <span class="matched">a</span>
+        <span class="matched unmatched">b</span>
+        <span class="unmatched">c</span>
+    </p>
+    <p id="bar">
+        <span>x</span>
+    </p>
+    <script type="text/javascript"> 
+       window.onload = function(){
+        /*getElementsByClassName(클래스명) : 태그의 class 속성이 지정한 class명과 일치하는 문서객체를 
+                                            배열로 읽음 */
+        var foo = document.getElementsByClassName('matched unmatched');
+                                                // 공백까지 인식해서 span b를 인식함
+        var output = '';
+        for(var i=0;i<foo.length;i++){
+            output += foo[i].innerHTML + '\n';
+        }
+        alert(output);
+       }
+    </script>
+</body> 
+</html>

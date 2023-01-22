@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<TITLE></TITLE>
+</head>
+<body>
+    <h1 id="header_1">header</h1>
+    <h1 id="header_2">header</h1>
+
+    <ul>
+        <li class="apple">Apple</li>
+        <li class="grape">Grape</li>
+        <li class="orange">Orange</li>
+    </ul>
+    <script type="text/javascript"> 
+       window.onload = function(){
+        //id를 이용해 하나의 태그 호출
+        var header1 = document.querySelector('#header_1');
+        var header2 = document.querySelector('#header_2');
+
+        header1.innerHTML = 'hello :)';
+        header2.innerHTML = 'wow :)';
+
+        
+        document.querySelector('.apple').style.color = 'red';
+       }
+    </script>
+</body> 
+</html>

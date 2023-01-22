@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<TITLE>id를 이용한 문서 객체 탐색</TITLE>
+</head>
+<body>
+    <h1 id="header_1">Header</h1>
+    <h1 id="header_2">Header</h1>
+
+    <script type="text/javascript">
+        window.onload = function(){
+            //getElementByID(id) : 태그의 id속성이 id와 일치하는 문서 객체를 가져옴
+
+            var header1 = document.getElementById('header_1');
+            var header2 = document.getElementById('header_2');
+
+            header1.innerHTML = '하하';
+            header2.innerHTML = '호호';
+        }
+    </script>
+</body> 
+</html>

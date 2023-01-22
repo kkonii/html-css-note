@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<TITLE>querySelectorAll</TITLE>
+</head>
+<body>
+    <ul>
+        <li class="apple">Apple</li>
+        <li class="grape">Grape</li>
+        <li class="orange">Orange</li>
+    </ul>
+    <script type="text/javascript"> 
+       let elems = document.querySelectorAll('ul > li');
+
+       elems[0].style.background = 'yellow';
+       elems[0].style.color = 'blue';
+
+       document.write('-------<br>');
+
+       for(let i=0;i<elems.length;i++){
+        document.write(elems[i].innerHTML + '<br>');
+       }
+       document.write('--------<br>');
+
+       elems.forEach(function(item){
+        document.write(item.innerHTML + '<br>');
+       });
+
+       elems.forEach(function(item){
+         item.style.border = '1px solid red';
+       });
+
+    </script>
+</body> 
+</html>
