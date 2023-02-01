@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>buy goods</title>
+<style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    h2{
+        margin-top:40px;
+        text-align: center;
+    }
+    table{
+        width:600px;
+        margin:40px auto;
+    }
+    td{
+        padding-left:10px;
+    }
+    #buy{
+        padding:10px 10px;
+    }
+    img{width:100px;}
+    #price{
+        text-align:center;
+    }
+    #preview{
+        border:3px solid gray;
+        margin:30px auto;
+        text-align:center;
+        height:50px;
+    }
+    input[type="submit"]{
+        width:70px;
+        height:30px;
+        margin-left:500px;
+        background-color: #289ca0;
+        color:white;
+        font-size:1.3em;
+        font-weight: bold;
+    }
+    span{
+        font-size:20px;
+        font-weight:bold;
+    }
+    span#total{
+        color:red;
+    }
+</style>
+</head>
+<body>
+    <h2>상품 구매</h2>
+    <form action="order.jsp" method="post">
+        <table>
+            <caption>구매 상품 목록</caption>
+            <tr>
+                <td><img src="bag.jpg" alt=""></td>
+                <td><img src="coat.jpg" alt=""></td>
+                <td><img src="jeans.jpg" alt=""></td>
+                <td><img src="giftCard.jpg" alt=""></td>
+                <td><img src="shoes.jpg" alt=""></td>
+            </tr>
+            <tr>
+                <td><input id="c0" type="checkbox" 
+                    name="goods" value="bag">bag</td>
+                <td><input id="c1" type="checkbox" 
+                    name="goods" value="coat">coat</td>
+                <td><input id="c2" type="checkbox" 
+                    name="goods" value="jeans">jeans</td>
+                <td><input id="c3" type="checkbox"
+                    name="goods" value="gift card">gift card</td>
+                <td><input id="c4" type="checkbox" 
+                    name="goods" value="shoes">shoes</td>
+            </tr>
+            <tr id="price">
+                <td>(20만원)</td>
+                <td>(10만원)</td>
+                <td>( 5만원)</td>
+                <td>(15만원)</td>
+                <td>(25만원)</td>  
+            </tr>
+            <tr height="100">
+                <td colspan=5><b>30만원 미만 결제</b>시 5,000원의 배송비가 추가됩니다.</td>
+            </tr>
+            <tr>
+                <td id="preview" colspan="5">
+                    총 상품 가격 <span>0</span>원 + 
+                    총 배송비 <span>0</span>원 = 
+                    총 주문금액 <span id="total">0</span>원
+                </td>
+            </tr>
+            <tr>
+                <td id="buy" colspan="5"><input type="submit" value="buy"></td>
+            </tr>
+        </table>
+    </form>
+    <script type="text/javascript">
+       window.onload = function(){
+        let product = {
+                c0:200000,
+                c1:100000,
+                c2:50000,
+                c3:150000,
+                c4:250000
+        }
+        let sum = 0;        //합계 금액
+        let ship = 0;       //배송비
+
+        //두 가지 셀렉터 모두 가능
+        // let inputs = document.getElementsByName('goods');
+        let inputs = document.querySelectorAll('input[type="checkbox"]');
+        for(let i=0;i<inputs.length;i++){
+            //이벤트 연결
+            inputs[i].onclick=function(){
+                //상품 구매 총액 구하기
+                if(this.checked){       //체크박스 선택시
+                    sum += product[this.id];            //가격 누적
+                }else{                  //체크박스 해제시
+                    sum -= product[this.id];            //가격 차감
+                }
+
+                if(sum < 300000 && sum > 0){ //sum이 0원일 때 배송비가 붙으면 안되는 것도 고려
+                    ship = 5000;
+                }else{
+                    ship = 0;
+                }
+
+                //구매비용과 배송비를 화면에 표시
+                let spans = document.getElementsByTagName('span');
+
+                //toLocaleString(지역포맷에 맞게 숫자가 명시됨 -> 숫자를 세 자리씩 쉼표로 표시해서 문자열로 반환)
+                spans[0].innerHTML = sum.toLocaleString();        
+                spans[1].innerHTML = ship.toLocaleString();
+                spans[2].innerHTML = (sum + ship).toLocaleString();
+            }
+        }
+    }
+    </script>
+</body>
+</html>
