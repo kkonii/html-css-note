@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>실습 - 성적처리</title>
+<style type="text/css">
+   
+</style>
+</head>
+<body>
+    <form>
+        국어 <input type="text" name="korean" id="korean"><br>
+        영어 <input type="text" name="english" id="english"><br>
+        수학 <input type="text" name="math" id="math"><br>
+        <button id="confirm_btn">확인</button>
+    </form>
+    <div id="result"></div>
+    <script type="text/javascript">
+        /* 국어,영어,수학 성적을 입력 받아서 총점 평균을 구해서 div태그 안에 출력.
+           [출력 예시]
+            영어 : 93
+            수학 : 90
+            국어 : 33
+            총점 : 213
+            평균 : 71
+        */
+       window.onload = function(){
+         let confirm_btn = document.getElementById('confirm_btn');
+         //버튼 이벤트 연결
+         confirm_btn.onclick = function(){
+                let korean = document.getElementById('korean');
+                let english = document.getElementById('english');
+                let math = document.getElementById('math');
+                 if(korean.value =='' || english.value=='' || math.value==''){
+                    alert('공백을 모두 채워주세요');
+                    return false;
+                }else{
+                    if(!isNaN(korean.value) && !isNaN(english.value) && !isNaN(math.value)){
+                        if(korean.value >100 || korean.value < 0 ||
+                            english.value > 100 || english.value < 0 ||
+                            math.value > 100 || math.value < 0){
+                                 alert('1-100사이로 입력하세요');
+                        }else{
+                            // 평균, 총점 구해서 출력하는 코드 ㅇㅇ
+                        }
+                    }else{
+                        alert('숫자가 아닙니다');
+                    }
+                }
+                
+            }
+       }    
+    </script>
+</body>
+</html> 
