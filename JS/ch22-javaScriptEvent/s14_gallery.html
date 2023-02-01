@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>갤러리</title>
+<style type="text/css">
+    *{
+        margin:0px; padding:0px;       /*간격 여백 제거*/
+    }
+    #galleryWrap{
+        width:520px;
+        margin:0 auto;                /*중앙 정렬*/
+        text-align: center;
+    }
+    #galleryWrap img{
+        vertical-align: middle;
+    }
+    img#prev,img#next{
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <div id="galleryWrap">
+        <h1>이미지 넘기기</h1>
+        <p>
+            <!-- 이전 그림으로 넘기는 화살표 -->
+            <img src="left_btn.png" 
+                 alt="이전 그림 보기" id="prev">
+            <!-- 현재 보고 있는 사진 -->
+            <img src="img1.jpg" 
+                 alt="갤러리 그림" id="gallery">
+            <!-- 다음 그림으로 넘기는 화살표 -->
+            <img src="right_btn.png"
+                 alt="다음 그림 보기" id="next">
+        </p>
+    </div>
+    <script type="text/javascript">
+       window.onload = function(){
+            let num = 1;            //var로 선언해도 가능하지만 최근 경향은 let로 선언
+                                    //함수레벨 스코프보단 블록 레벨 스코프를 선호하는 추세
+            let gallery = document.getElementById('gallery');
+            
+            //이벤트 연결
+            //이전 사진 보기 버튼을 눌렀을 때
+            document.getElementById('prev').onclick = function(){
+                num--;
+                if(num<1) num=7;    //첫번째 사진에ㄴ서 이전 누르면 7번째 사진으로 다시 되돌아감
+                gallery.src = 'img' + num + '.jpg';
+            }
+            //다음 사진 보기 버튼을 눌렀을 때
+            document.getElementById('next').onclick = function(){
+                num++;
+                if(num > 7) num=1;
+                gallery.src = 'img' + num + '.jpg';    //이미지 이름에 미리 번호와 num의 순서를 같게.
+            }
+       }
+    </script>
+</body>
+</html>
