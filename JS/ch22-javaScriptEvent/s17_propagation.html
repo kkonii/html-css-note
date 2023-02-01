@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>이벤트버블링</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /* 이벤트 전파(전달) 
+            : 특정 태그에서 이벤트가 발생하면
+              상위 태그(또는 하위 태그)로 이벤트가 전달되는 현상
+        */
+        window.onload = function(){
+            //이벤트 연결
+            document.getElementById('div').onclick = function(){
+                alert('div');
+                this.style.background = 'pink';
+            }
+
+            document.getElementById('paragraph').onclick = function(event){
+                alert('parapraph');
+                this.style.background = 'yellow';
+
+                //이벤트 버블링 현상을 막으려면 이벤트 핸들러의 매개변수를 이용해서
+                //event객체를 전달받고 event객체의 stopPropagation() 메서드를 사용
+                event.stopPropagation();
+            }
+            
+            
+
+            
+        }
+        
+    </script>
+    <div id="div">div
+        <p id="paragraph">Paragraph</p>
+    </div>
+    
+</body>
+</html>
