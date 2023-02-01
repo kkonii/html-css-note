@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>onload</title>
+</head>
+<body>
+    <div id="notice"></div>
+    <script type="text/javascript">
+        //이벤트 연결
+        //이벤트 속성 = 이벤트 핸들러(함수)
+        window.onload=function(){
+            alert('문서가 로드되었습니다.');
+            document.body.style.backgroundColor = 'gray';
+            var notice = document.getElementById('notice');
+            notice.innerHTML = '나는 지금 경주 :)';
+            notice.style.color = 'white';
+        }
+    </script>
+</body>
+</html>
