@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>isNaN 함수의 활용</title>
+<script type="text/javascript">
+	function checkIt(){
+		var age = document.getElementById('age');
+		
+		//공백를 제거하기 위해 trim 메서드를 사용함
+		if(age.value.trim()==''){
+			alert('나이를 입력하세요!');
+			age.value = ''; //공백이 있다면 공백을 제거;
+			age.focus();
+			return;//함수를 빠져나감			
+		}
+		
+		if(isNaN(age.value)){
+			alert('숫자만 입력 가능합니다.');
+			age.value = '';//문자를 제거
+			age.focus();
+			return;//함수를 빠져나감
+		}
+
+		alert('나이는 ' + age.value + '살입니다.');	
+	}
+</script>
+</head>
+<body>
+	<form>
+		<input type="text" name="age" id="age" size="20">
+		<input type="button" value="나이 확인" onclick="checkIt()">
+	</form>
+</body>
+</html>
