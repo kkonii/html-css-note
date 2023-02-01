@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>가위바위보 게임</title>
+<style type="text/css">
+   body{
+    font-family: sans-serif;
+   }
+   h1{
+    text-align: center;
+   }
+   div#game{
+    width:480px;
+    margin:0 auto;
+    text-align: center;
+   }
+   div.result-img{
+    position:relative;
+    width:220px;
+    float:left;
+   }
+   div.result-img:first-child{
+    text-align: right;
+   }
+   div.result-img:last-child{
+    text-align: left;
+   }
+   div.result-img span{
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    width:120px;
+    text-align: center;
+    background-color: #f4f2c6;
+    position: absolute;
+    top:25%;
+    left:20%;
+   }
+   .user_option{
+    cursor: pointer;
+   }
+</style>
+</head>
+<body>
+    <h1>가위바위보 게임</h1>
+    <div id="game">
+        <div>
+            <img src="timg0.png" class="user_option" id="img0" width="90">
+            <img src="timg1.png" class="user_option" id="img1" width="90">
+            <img src="timg2.png" class="user_option" id="img2" width="90">
+        </div>
+        <div>
+            <div class="result-img"><img style="display:none;" alt="컴퓨터"><span></span></div>
+            <div class="result-img"><img style="display:none;" alt="사용자"><span></span></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+       window.onload = function(){
+        //컴퓨터와 사용자 이미지를 표시할 img 호출하여 배열로 읽어오기
+        let gameImage = document.querySelectorAll('.result-img img');
+
+        //사용자가 선택한 가위바위보 이미지 호출
+        let userOption = document.getElementsByClassName('user_option');    //배열로 만듦
+        for(let i=0;i<userOption.length;i++){
+            //이벤트 연결
+            userOption[i].onclick = function(){
+                //컴퓨터가 선택한 값
+                let com_answer = Math.floor(Math.random()*3);       //0-2범위[0:가위 1:바위 2:보]
+
+                //컴퓨터가 선택한 이미지 표시
+                gameImage[0].style.display = '';
+                gameImage[0].src = 'timg' + com_answer + '.png';
+
+                //user가 선택한 값
+                let user_answer = this.id.substr(3);
+                //이해 안 됐다가 이해함 : id= img0중 숫자만 추출해서 뽑음
+
+                gameImage[1].style.display = '';    //display:block과 같음 
+                gameImage[1].src = this.src;
+
+                //가위바위보 결과
+                /*
+                컴퓨터      사용자      컴-사
+                0             0         0 (무승부)
+                0             1         -1(패)
+                0             2         -2(승)
+                -----------------------------
+                1             0         1(승)
+                1             1         0(무)
+                1             2         -1(패)
+                -------------------------------
+                2             0         2(패)
+                2             1         1(승)
+                2             2         0(무승부)
+                
+                결론: 0은 무승부  -1/2는 패  -2/은 승
+             */
+             let result;
+             let num = com_answer - user_answer;
+             if(num == 0){
+                result=['무','무'];
+             }else if(num == 1 || num == -2){
+                result=['승','패'];
+             }else if(num == -1 || num == 2){
+                result=['패','승'];
+             }
+
+             //승패 결과를 표시하기 위해 span태그 호출
+             let showResult = document.querySelectorAll('.result-img span');
+             for(let i=0;i<showResult.length;i++){
+                    if(result[i] == '패'){
+                        gameImage[i].width = 100;               //이미지를 작게
+                        showResult[i].style.display = 'none';     //패했을 때는 글자를 명시하지 않음
+                    }else{
+                        gameImage[i].width = 220;
+                        showResult[i].style.display = '';
+                    }
+                    showResult[i].innerHTML = (i == 0 ? '컴퓨터' : '사용자') + result[i];
+                
+                }
+            }
+        }
+       }
+    </script>
+</body>
+</html>
