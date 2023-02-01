@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>onclick</title>
+<style type="text/css">
+    div#header{
+        background-color: yellowgreen;
+    }
+</style>
+</head>
+<body>
+    <div id="header">클릭</div>
+    <script type="text/javascript">
+       window.onload = function(){
+         var header = document.getElementById('header');
+         
+         //이벤트 핸들러(함수)
+         function whenClick(){
+            alert('CLICK');
+         }
+         //이벤트 연결
+        /*header.onclick = whenClick();  /*이벤트 연결한 것이 아니라 함수를 1번 실행한 후 함수가 종료되기 때문에
+                                          이벤트 발생 시 함수를 호출할 수 없음 */
+        
+        //이벤트 연결
+        header.onclick = whenClick;      // 괄호를 빼고 명시해줘야한다. -> 명시적함수는 ()를 넣는 실수를 할 확률이 크다.
+
+        //익명함수 이벤트 연결하는 것이 실수를 줄이기 좋다.
+        header.onclick = function(){
+            alert('클릭! :(');
+        }
+       }
+    </script>
+</body>
+</html>

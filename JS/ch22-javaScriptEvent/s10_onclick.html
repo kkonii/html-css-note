@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>onload</title>
+</head>
+<body>
+    <form action="#">
+        <input type="radio" name="price" checked value="0">무료
+        <input type="radio" name="price" value="1" class="cost">유료
+    </form>
+    <div id="yumu" style="display:none;">
+        <!-- 유료 radio를 누르면 보여질 태그 -->
+        유료회원 가입비는 10,000원입니다.
+    </div>
+    <script type="text/javascript">
+        // document.getElementsByClassName('cost')[0].addEventListener('change',function(){
+        //     document.getElementById('yumu').style.display = 'block';
+        // });
+
+        window.onload = function(){
+            //div 호출
+            var gubun = document.getElementById('yumu');
+            //(타입이 radio인) input 태그 호출
+            var radios = document.getElementsByTagName('input');
+            for(var i=0;i<radios.length;i++){
+                radios[i].onclick=function(){
+                    if(radios[0].checked){          //첫 번째 radio button 선택
+
+                        //div 숨김
+                        gubun.style.display = 'none';
+                    }else{                          //두 번째 radio button 선택
+
+                        //div를 표시
+                        gubun.style.display = '';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
