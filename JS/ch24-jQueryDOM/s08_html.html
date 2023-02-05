@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>html(),text()</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('div').html('<h1>안녕하세요 :)</h1>');
+
+        //텍스트로만 처리
+        $('p').text('<p>Hello :)<p>');
+        /* html과 text차이 - html은 문자열 속 태그를 인식하지만 text는 태그도 문자열로 인식*/
+
+        //인자에 함수를 전달해서 데이터를 다르게 셋팅
+        $('.space').html(function(index){
+            return '<h2>Header-' + index + '</h2>';
+        });
+
+        //태그의 내용을 읽어와서 내용을 새롭게 가공하기
+        $('h1').html(function(index,html){
+                            //index - 해당 태그를 배열로 인식함(h1 배열쯤). 그 안에서의 인덱스
+                            //html - 배열에 저장돼 있는 태그의 내용을 반환
+            return '**' + html + '**';
+        });
+    });
+</script>
+<style type="text/css">
+    
+</style>
+</head>
+<body>
+    <div></div>
+    <p></p>
+    <hr width="90%" size="1" noshade="noshade">
+
+    <div class="space"></div>
+    <div class="space"></div>
+    <div class="space"></div>
+
+    <h1>제목-0</h1>
+    <h1>제목-1</h1>
+    <h1>제목-2</h1>
+</body>
+</html>
