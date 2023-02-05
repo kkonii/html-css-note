@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>attr()</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        //3초후 align속성 제거
+        setTimeout(function(){
+            $('h1').removeAttr('align');
+        },3000);
+    });
+</script>
+<style type="text/css">
+    
+</style>
+</head>
+<body>
+    <h1 align="center">Header-0</h1>
+    <h1>Header-1</h1>
+    <h1>Header-2</h1>
+</body>
+</html>
