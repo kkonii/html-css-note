@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>선택자</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.item').css('color','yellow');
+        $('h1.item').css('background','red');
+        //두 개의 클래스를 모두 가지는 셀렉터
+        $('.item.select').css('border','solid black 2px');  //공백없이 나열 - 공백은 하위요소를 가리킴
+    });
+</script>
+</head>
+<body>
+    <h1 class="item">Header-0</h1>
+    <h2 class="item">Header-1</h2>
+    <h1 class="item select">Header-2</h1>
+    <h1 class="item">Header-3</h1>
+</body>
+</html>

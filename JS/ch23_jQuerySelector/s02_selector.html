@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>선택자</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        //태그 선택자
+        $('span').css('border','red solid 4px');
+        //클래스 선택자
+        $('.my').css('border','5px solid orange');
+        //id 선택자
+        $('#content').css('background-color','gray');
+    });
+</script>
+</head>
+<body>
+    <p class="my">jQuery실습</p>
+    <div id="content">
+        <div>id값이 content인 div tag</div>
+    </div> 
+    <span>span1</span>
+    <span class="my">span2</span>
+</body>
+</html>

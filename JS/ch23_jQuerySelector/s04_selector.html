@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>입력 양식 필터 선택자</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    /* 입력양식 필터 선택자
+        선택자 형태             설명
+        요소:checked            체크된 입력 양식
+        요소:disabled           비활성화된 입력 양식
+        요소:enabled            활성화된 입력양식
+        요소:focus              초점이 맞춰져있는 입력양식
+        요소:selected           select태그에서 option객체 중 선택된 태그
+    */
+   $(document).ready(function(){
+        //5초 후에 코드를 실행
+        setTimeout(function(){
+            //select태그에서 선택한 option에 접근
+            var value = $('select > option:selected').val();
+            alert(value);
+        },3000);
+   });
+</script>
+</head>
+<body>
+    <select>
+        <option value="apple">Apple</option>
+        <option>Banana</option>
+        <option>Papaya</option>
+        <option>Lemon</option>
+        <option>Orange</option>
+    </select>
+</body>
+</html>

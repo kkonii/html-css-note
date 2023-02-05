@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>입력 양식 필터 선택자</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        //attr() : 태그의 속성 제어
+        $('input:checked').attr('checked',false);//체크해제
+        //val():태그의 value속성 제어
+        // $('input:disabled').val('클릭할 수 없음');
+        $('input:disabled').attr('disabled',false)//활성화
+    });
+    
+</script>
+</head>
+<body>
+    <input type="checkbox" name="city" value="서울" checked>서울
+    <input type="button" value="확인" disabled>
+</body>
+</html>
