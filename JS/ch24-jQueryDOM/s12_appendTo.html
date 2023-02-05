@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>appendTo를 이용한 스몰플젝</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        //img크기 조정
+        $('img').css('width','100px');
+
+        //2초마다 함수 호출
+        setInterval(function(){
+            //first() : 여러 개의 태그 중 가장 첫 번째 태그 객체를 반환
+            //첫번째 이미지를 마지막으로 보냄
+            $('img').first().appendTo('body');
+        },2000);
+    });
+
+    
+</script>
+<style type="text/css">
+    
+</style>
+</head>
+<body>
+    <!-- <img src="../files/Chrysanthemum.jpg" alt="">
+    <img src="../files/Desert.jpg" alt="">
+    <img src="../files/Hydrangeas.jpg" alt="">
+    <img src="../files/Jellyfish.jpg" alt="">
+    <img src="../files/오구.jpg" alt=""> -->
+
+    <img src="../files/바닷속.jpg" alt="">
+    <img src="../files/바닷속.jpg" alt="">
+    <img src="../files/서퍼.webp" alt="">
+    <img src="../files/바닷속.jpg" alt="">
+    <img src="../files/바닷속.jpg" alt="">
+</body>
+</html>
