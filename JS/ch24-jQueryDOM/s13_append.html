@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>문서 객체 생성</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    /*
+        메서드이름              설명
+        $(A).aapend(B)          B를 A의 기존 자식 뒤에 추가
+        $(A).prepend(B)         B를 A의 기존 자식 앞에 추가
+        $(A).after(B)           B를 A의 뒤에 형제로 추가
+        $(A).before(B)          B를 A의 앞에 형제로 추가
+    */
+   $(document).ready(function(){
+    $('div').append('<p>append 붙인 태그</p>');
+    $('div').prepend('<p>prepend 붙인 태그</p>');
+    $('div').after('<mark>after 붙인 태그</mark>');
+    $('div').before('<mark>before 붙인 태그</mark>');
+   });
+   
+</script>   
+<style type="text/css">
+    
+</style>
+</head>
+<body>
+    <div>
+        <h1>오늘은 수요일1 ;p</h1>
+    </div>
+</body>
+</html>
