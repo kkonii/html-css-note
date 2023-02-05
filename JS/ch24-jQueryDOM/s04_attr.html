@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>attr()</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        //attr():속성과 관련도린 모든 기능을 수행.
+        //하나의 속성 제어
+        //$('img').attr('width',100); //원본 크기의 비율에 맞게 줄여줌
+
+        //복수의 속성 제어
+        $('img').attr('width',100);
+        $('img').attr('height',100);
+        /* 코드를 줄이려면 제이쿼리 객체의 특성을 잘 알아야 한다.
+           메서드를 호출하면 해당 제이쿼리 객체를 반환하기 때문에
+           같은 객체에 대해서 속성을 지정하고자 한다면 객체셀렉터는
+           한 번만 명시해도 된다.
+           ㄴ $('img').attr('width',100).attr('height',100);와 같다
+        */
+
+        $('img').attr({width:200,height:200});
+        /*제어할 속성을 객체로 만들어서 메서드 안에 넣어주면 코드를
+          절약할 수 있다 */
+    });
+</script>
+<style type="text/css">
+    
+</style>
+</head>
+<body>
+    <img src="../ch22-javaScriptEvent/Penguins.jpg" alt="">
+    <img src="../ch22-javaScriptEvent/Koala.jpg" alt="">
+    <img src="../ch22-javaScriptEvent/img7.jpg" alt="">
+</body>
+</html>

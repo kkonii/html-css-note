@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>attr()</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        //3초 후 src의 속성값을 표시
+        setTimeout(function(){
+            var src = $('img').attr('src'); //attr은 속성값을 반환할 수도 있다
+                    //ㄴ> '../ch22-javaScriptEvent/Penguins.jpg'
+        },3000);
+    });
+</script>
+<style type="text/css">
+    
+</style>
+</head>
+<body>
+    <img src="../ch22-javaScriptEvent/Penguins.jpg" alt="">
+</body>
+</html>
