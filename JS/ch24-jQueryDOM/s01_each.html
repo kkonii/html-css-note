@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>배열</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        //배열 생성
+        let array = [
+            {name: 'naver',link:'https://www.naver.com'},       //객체
+            {name:'daum',link:'https://www.daum.net'},
+            {name:'nate',link:'https://www.nate.com'},
+            {name:'google',link:'https://www.google.co.kr'}
+        ];
+
+        $.each(array,function(index,item){      //제이쿼리가 가지고 있는 each메서드. 배열을 파라미터로 입력받는다
+//                              ㄴ배열의 인덱스와 해당 객체
+            let output = '';
+            output += '<h1>';
+            output += '<a href="' + item.link + '">' + item.name;
+            output += '</h1>';
+
+            document.body.innerHTML += output;
+        });        
+    });
+</script>
+</head>
+<body>
+    
+</body>
+</html>
