@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>효과와 애니메이션</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+   $(function(){
+    $('#btn1').on('click',function(){
+        //선택한 요소에 명시한 투명도를 지정
+        $('#dog').fadeTo('slow',0.3);
+    });
+    $('#btn2').on('click',function(){
+        // 투명도 (0:투명 ~ 1:불투명)
+        $('#dog').fadeTo('slow',1);
+    });
+   });
+</script>
+</head>
+<body>
+    <button id="btn1">투명도30%</button>
+    <button id="btn2">투명도100%</button>
+    <br>
+    <img src="../files/dog.png" id="dog" width="120" height="100">
+</body>
+</html>
