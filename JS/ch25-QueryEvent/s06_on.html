@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>on()</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//현재 존재하는 태그뿐만아니라 미래에 새로 생성되는 태그에도
+		//이벤트 연결     //이벤트 타입,태그,이벤트 핸들러
+		$(document).on('click','h1',function(){					//미래에 만들어지는 h1태그에도 이벤트 연결이 가능해짐
+			let length = $('h1').length; //h1 태그의 개수
+			let targetHTML = $(this).html();//이벤트가 발생한 h1 태그의 내용
+			$('#wrap').append('<h1>' + length + ' - ' + targetHTML + '</h1>');
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<h1>Header</h1>
+	</div>
+</body>
+</html>
