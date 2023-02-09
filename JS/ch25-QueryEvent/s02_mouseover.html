@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>mouseover,mouseout,hover</title>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#btn1').mouseover(function(){
+			$('p').css('background-color','yellow');
+		});
+		$('#btn1').mouseout(function(){
+			$('p').css('background-color','purple');
+		});
+		$('#btn2').hover(function(){
+			//mouseover 이벤트가 발생하면 호출
+			$('p').css('background-color','pink');
+		},function(){
+			//mouseout 이벤트가 발생하면 호출
+			$('p').css('background-color','skyblue');
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="btn1">mouseover/out</button>
+	<button id="btn2">hover</button>
+	<p>내용</p>
+</body>
+</html>
