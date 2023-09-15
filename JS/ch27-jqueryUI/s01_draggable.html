@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="Utf-8">
+<title>draggable()</title>
+<link rel="stylesheet" href="../CSS/jquery-ui.min.css">
+<style type="text/css">
+   #draggable{
+    width:150px; height:150px; padding:0.5em; border:gray 1px solid;
+   }
+</style>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#draggable').draggable();        //jquery-ui-min.js가 제공하는 기능임
+    });
+</script>
+</head>
+<body>
+   <div id="draggable" class="ui-weight-content">
+    <p>Drag me around</p>
+   </div>
+</body>
+</html>
