@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>accordion()</title>
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //자식창이 떴을 때 부모창을 선택할 수 없어야 모달창으로 인정
+        $('#dialog').dialog({
+            resizable:false,    //크기 변경 불가
+            modal:true,         //모달창 : 부모영역 선택 불가
+            height:200,
+            buttons:{           //버튼 생성
+                //공백이 있을 경우 '' 안에 입력
+                'Delete all items':function(){
+                    $(this).dialog('close');    //다이얼로그 닫기
+                },
+                Cancel: function(){
+                    $(this).dialog('close');    
+                }
+            }
+        });
+    });
+</script>
+</head>
+<body>
+	<div id="dialog" title="모달창 구현하기">
+        <p>jqeury를 이용해서 모달창 구현</p>
+    </div>
+    <p>jQuery는 다양한 UI 처리 메서드를 제공합니다.</p>
+</body>
+</html>
+
+
+

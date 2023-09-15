@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>accordion()</title>
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#dialog').dialog({
+            autoOpen:false,         //수동으로 다이얼로그 열기
+            show:{                  //보여줄 때의 effect (jquery에서 지원하는 UI)
+                effect:'blind',
+                duration:100
+            },                
+            hide:{
+                effect:'explode',    //쪼개지면서 사라짐
+                duration:1000
+            }
+        });
+        //버튼을 눌렀을 때 이벤트 연결
+        $('#opener').click(function(){
+            $('#dialog').dialog('open');
+        });
+	});
+</script>
+</head>
+<body>
+	<div id="dialog" title="다이얼로그">
+        <p>버튼을 누르면 보여지는 다이얼로그</p>
+    </div>
+    <button id="opener">Open Dialog</button>
+</body>
+</html>
+
+
+
