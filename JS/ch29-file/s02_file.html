@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 미리보기</title>
+<script type="text/javascript">
+    window.onload=function(){
+        let image = document.getElementById('image');
+
+        //이벤트 연결
+        let file = document.getElementById('file');
+        file.onchange=function(){
+            if(!file.files[0]){                 //선택된 파일이 없을 경우
+                alert('파일을 선택하세요!');
+                image.src = '../files/face.png';
+                return;                         //함수를 빠져나감
+            }
+
+            //이미지 읽기
+            let reader = new FileReader();
+            reader.readAsDataURL(file.files[0]);
+
+            //이미지도 용량이 클 수 있기 때문에 로딩이 길 수 있다. 완료되면 alert으로 알려주도록 하자
+            reader.onload=function(){
+                image.src = reader.result;
+            }
+        }
+    }
+</script>
+</head>
+<body>
+    <h2>이미지 미리보기</h2>
+    <div>
+        <img src="../files/face.png" id="image"
+             width="200" height="200">
+    </div>
+    <input type="file" id="file"
+           accept="image/gif,image/png,image/jpeg" >
+           <!-- 웹에서 이미지에 접근하는 것이기 때문에 gif,png,jpeg로 범위를 한정해준다 -->
+</body>
+</html>
+
+
+
