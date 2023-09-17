@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캔버스</title>
+<style type="text/css">
+    #canvas{border:1px solid black;} /*캔버스 영역선 설정*/
+</style>
+<script type="text/javascript">
+    //기본적으로 html5에서 지원하는 기능이므로 라이브러리가 따로 필요하지는 않음
+    window.onload=function(){
+        let canvas = document.getElementById('canvas'); //캔버스에 접근
+        if(canvas.getContext){
+            let context = canvas.getContext('2d');
+            context.fillStyle = 'rgb(200,0,0)';         //칠할 색상 지정
+            context.fillRect(0,0,100,100);              //사각형 생성(x좌표,y좌표,width,height)
+        }else{                  //브라우저가 캔버스를 지원하지 않을 때 알려주기 위함
+            alert('브라우저가 캔버스를 지원하지 않습니다.');
+        }
+    }
+</script>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="300"></canvas>  
+</body>
+</html>
+
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캔버스 - fillRect</title>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+    window.onload=function(){
+        let canvas = document.getElementById('canvas'); 
+        if(canvas.getContext){
+            let context = canvas.getContext('2d');
+            context.fillStyle = 'rgb(200,0,200)';
+            context.fillRect(10,10,100,100);
+
+            context.fillStyle = 'rgba(0,0,200,0.5)';    //색상 및 알파값 지정
+                                                        //알파값 > (0.0-완전투명 ~ 1.0-완전불투명)
+            context.fillRect(50,50,100,100);    
+            context.fillRect(0,200,100,200);            //캔버스 밖으로 나가면 잘림
+        }else{                  
+            alert('브라우저가 캔버스를 지원하지 않습니다.');
+        }
+    }
+</script>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="300"></canvas>  
+</body>
+</html>
+
+
+
