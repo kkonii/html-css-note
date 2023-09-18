@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캔버스 - 선형Gradient</title>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+    //색상처럼 그라디언트를 만들어서 적용하면 ok
+    window.onload=function(){
+        let canvas = document.getElementById('canvas'); 
+        if(canvas.getContext){
+            let context = canvas.getContext('2d');
+            
+            /* 선형 그라디언트
+                createLinearGradient(x1,y1,x2,y2)
+                :시작점(x1,y1)과 끝점(x2,y2)을 지정하여 그라디언트 영역을 만듦
+            */
+           let grad = context.createLinearGradient(0,0,0,290);  //세로방향으로 가는 그라디언트
+
+           /*addColorStop(position,color) : 포지션을 주고 컬러를 줌
+             position : 색상의 위치를 상대적으로 표시하는 것으로,
+                        사용할 수 있는 값은 0.0 ~ 1.0 사이. 0.0과 1.0 위치에서의
+                        색상만 지정해주면 두 색상 사이의 중간 색상은
+                        자동으로 계산해서 그라디언트를 만들어줌
+            */
+           grad.addColorStop(0,'#39c');  //3399cc와 똑같음
+           grad.addColorStop(1,'white');
+
+           //만들어진 그라디언트를 색상으로 적용
+           context.fillStyle = grad;
+           context.fillRect(0,0,200,200);
+        }else{                      
+            alert('브라우저가 캔버스를 지원하지 않습니다.');
+        }
+    }
+</script>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="300"></canvas>  
+</body>
+</html>

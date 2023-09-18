@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캔버스 - 방사형Gradient</title>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+    window.onload=function(){
+        let canvas = document.getElementById('canvas'); 
+        if(canvas.getContext){
+            let context = canvas.getContext('2d');
+            
+            /* 방사형 그라디언트
+                createRadialGradient(x1,y1,r1,x2,y2,r2)
+                :(x1,y1)를 중점으로 하는 반지름 r1과 (x2,y2)를 중점으로 하는 
+                 반지름 r2인 원, 이렇게 2개의 원을 만듦.
+            */
+           let radgrad = context.createRadialGradient(45,45,10,63,60,80);
+           radgrad.addColorStop(0,'#a7d30c');
+           radgrad.addColorStop(1,'rgb(1,159,98)');
+           
+           //원그리기
+           context.beginPath();
+           //그라디언트를 원에 적용
+           context.fillStyle = radgrad;
+           context.arc(80,80,80,0,Math.PI*2,true);
+           context.fill();
+        }else{                      
+            alert('브라우저가 캔버스를 지원하지 않습니다.');
+        }
+    }
+</script>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="300"></canvas>  
+</body>
+</html>
